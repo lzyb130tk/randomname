@@ -122,9 +122,7 @@ WHITELIST_USER_AGENT = {
 # 跨域配置
 # 允许的源列表，逗号分隔，例如 "http://localhost:3000,https://example.com"
 ALLOWED_ORIGINS_STR = os.environ.get("ALLOWED_ORIGINS", "")
-ALLOWED_ORIGINS = [
-    origin.strip() for origin in ALLOWED_ORIGINS_STR.split(",") if origin.strip()
-]
+ALLOWED_ORIGINS = [origin.strip() for origin in ALLOWED_ORIGINS_STR.split(",") if origin.strip()] or ["*"]
 
 # ---------- 运行时全局信息，无需修改 ----------
 
